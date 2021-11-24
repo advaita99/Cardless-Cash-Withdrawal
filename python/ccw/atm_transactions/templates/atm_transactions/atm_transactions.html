@@ -1,0 +1,41 @@
+
+{% extends 'temp/bank.html' %}
+{% block base %}
+    <h1><center>View ATM Transaction</center></h1>
+    <table class="table table-bordered text-center" align="center">
+        <tr style="font-weight: bolder">
+
+               <td> atm_id</td>
+                <td>Ifsc</td>
+                <td>account_number</td>
+                <td>Date</td>
+                <td>Time</td>
+                <td>Amount</td>
+                <td>status</td>
+
+
+
+    </tr>
+         {% if objval %}
+        {% for obj in objval  %}
+
+
+
+
+ 
+<tr>
+    <td>{{ obj.atm_id }}</td>
+      <td>{{ obj.ifsc_code }}</td>
+        <td>{{ obj.account_number }}</td>
+          <td>{{ obj.date }}</td>
+            <td>{{ obj.time }}</td>
+              <td>{{ obj.amount }}</td>
+                <td>{{ obj.status }}</td>
+  
+
+</tr>
+        {% endfor %}
+    {% endif %}
+      
+    </table>
+{% endblock %}

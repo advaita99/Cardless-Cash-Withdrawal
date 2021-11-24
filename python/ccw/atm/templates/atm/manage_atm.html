@@ -1,0 +1,31 @@
+{% extends 'temp/bank.html' %}
+{% block base %}
+    <h1><center>Manage ATM</center></h1>
+    <table align="center" class="table table-bordered text-center">
+        <tr style="font-weight: bolder">
+            <td>bank_id</td>
+            <td>Longitude</td>
+            <td>Latitude</td>
+            <td>Location</td>
+            <td></td>
+            <td></td>
+        </tr>
+         {% if objval %}
+        {% for obj in objval %}
+        <tr>
+             <td>{{ obj.b_id }}</td>
+              <td>{{ obj.longitude }}</td>
+               <td>{{ obj.latitude }}</td>
+                <td>{{ obj.location }}</td>
+
+               <td><a href="{% url 'block' idd=obj.atm_id %}">BLOCK</a></td>
+
+               <TD><a href="{% url 'update' idd=obj.atm_id %}">UPDATE</a></TD>
+        </tr>
+        {% endfor %}
+    {% endif %}
+ 
+
+
+    </table>
+{% endblock %}

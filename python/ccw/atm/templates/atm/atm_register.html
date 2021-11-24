@@ -1,0 +1,31 @@
+{% extends 'temp/bank.html' %}
+{% block base %}
+<form method="post">
+    {% csrf_token %}
+    <font color="white">
+	<h1 align="center">ATM Register</h1>
+<table align="center">
+	<tr>
+		<td> b_id</td>
+		<td height="50"> <input style="color: black"type="text" Name="bi" required="" class="form-control"></td>
+	</tr>
+	<tr>
+		<td>location</td>
+		<td height="50"> <input style="color: black"type="text" Name="location" required="" class="form-control"></td>
+	</tr>
+	<tr>
+		<td> latitude</td>
+		<td height="50"> <input style="color: black"type="text" Name="latitude" required="" class="form-control"></td>
+	</tr>
+	<tr>
+		<td> longitude</td>
+		<td height="50"> <input style="color: black"type="text" Name="longitude" required="" class="form-control"></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td align="center" height="50"><input style="color: black"type="submit" name="submit" class="btn btn-primary"></td>
+	</tr>
+</table>
+    </font>
+    </form>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'temp/bank.html' %}
+{% block base %}
+   <h1><center>View Balance and Add Cash to ATM</center></h1>
+   <table align="center" class="table table-bordered text-center">
+   <tr style="font-weight: bolder">
+    <td>atm_id</td>
+    <td>Amount</td>
+    <td>Date</td>
+    <td>time</td>
+
+   </tr>
+       {% if objval %}
+       {% for obj in objval %}
+
+
+
+   <tr>
+    <td>{{ obj.atm_id }}</td>
+    <td>{{ obj.amount }}</td>
+    <td>{{ obj.date }}</td>
+    <td>{{ obj.time }}</td>
+      <td> <input type="button" name="Addcash" value="Add Cash To ATM"></td>
+   </tr>
+        {% endfor %}
+    {% endif %}
+    </table>
+
+ 
+
+{% endblock %}

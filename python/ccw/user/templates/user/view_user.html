@@ -1,0 +1,35 @@
+{% extends 'temp/bank.html' %}
+{% block base %}
+    <h1 align="center">View User</h1>
+    <table class="table table-bordered text-center" align="center">
+        <tr style="font-weight: bolder">
+
+               
+                <td>Customer Name</td>
+                <td>email</td>
+                <td>Phone number</td>
+                <td>date of birth</td>
+            <td>status</td>
+            <td colspan="2"></td>
+{#            <td>username</td>#}
+{#                <td>password</td>#}
+        </tr>
+        {% if objval %}
+            {% for obj in objval %}
+
+<tr>
+{#    <td>{{ }}</td>#}
+{#    <td>{{  }}</td>#}
+    <td>{{ obj.name }}</td>
+    <td>{{ obj.email }}</td>
+    <td>{{ obj.phone_number }}</td>
+    <td>{{ obj.date_of_birth }}</td>
+    <td>{{ obj.status }}</td>
+    <td><a href="{% url 'uaccept' idd=obj.u_id%}">accept</a> </td>
+    <td><a href="{% url 'ureject' idd=obj.u_id %}">reject</a> </td>
+</tr>
+               {% endfor %}
+
+        {% endif %}
+    </table>
+{% endblock %}

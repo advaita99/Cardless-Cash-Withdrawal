@@ -1,0 +1,25 @@
+{% extends 'temp/bank.html' %}
+{% block base %}
+
+    <h1><center>View Request</center></h1>
+    <table align="center" class="table table-bordered text-center">
+        <tr style="font-weight: bolder">
+            <td>USER</td>
+            <td>TYPE OF ACCOUNT</td>
+            <td>AADHAR NUMBER</td>
+        </tr>
+
+          {% if objval %}
+        {% for obj in objval  %}
+
+        <tr>
+            <td>{{ obj.u_id }}</td>
+            <td>{{ obj.type_of_account }}</td>
+            <td>{{ obj.aadhar_card }}</td>
+        <td><a href="{% url 'rapprove' idd=obj.r_id %}">APPROVE</a> </td>
+        <td><a href="{% url 'rreject' idd=obj.r_id %}">REJECT</a> </td>
+        </tr>
+        {% endfor %}
+    {% endif %}
+    </table>
+{% endblock %}

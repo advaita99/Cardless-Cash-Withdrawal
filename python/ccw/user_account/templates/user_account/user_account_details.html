@@ -1,0 +1,31 @@
+{% extends 'temp/bank.html' %}
+{% block base %}
+    <h1><center>Verify User account details</center></h1>
+    <table class="table table-bordered text-center" align="center">
+        <tr>
+
+                <td>u_id</td>
+                <td>Account number</td>
+                <td>IFSC</td>
+                <td>Type of Account</td>
+             <td>Balance</td>
+              
+        </tr>
+        {% if objval %}
+        {% for obj in objval  %}
+
+
+
+
+<tr>
+    <td>{{ obj.u_id }}</td>
+    <td>{{ obj.account_number }}</td>
+    <td>{{ obj.ifsc_code }}</td>
+    <td>{{ obj.type_of_account }}</td>
+    <td>{{ obj.balance }}</td>
+
+   </tr>
+        {% endfor %}
+    {% endif %}
+    </table>
+{% endblock %}

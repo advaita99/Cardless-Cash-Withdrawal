@@ -1,0 +1,21 @@
+
+{% extends 'temp/admin.html' %}
+{% block base %}
+
+	<h1 align="center">view Rating</h1>
+<table align="center" border="1">
+        <tr>
+            <td>u_id</td>
+            <td>Rate</td>
+        </tr>
+     {% if objval %}
+        {% for obj in objval  %}
+        <tr>
+        	<td>{{ obj.u_id }}</td>
+        	<td>{{ obj.rating }}</td>
+        </tr>
+     {% endfor %}
+{% endif %}
+</table>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'temp/admin.html' %}
+{% block base %}
+ <h1><center>View complaint from user</center></h1>
+
+    <table align="center" class="table table-bordered text-center">
+        <tr style="font-weight: bolder">
+            <td>b_id</td>
+            <td>Date</td>
+            <td>time</td>
+            <td>Complaint</td>
+
+        </tr>
+        {% if objval %}
+        {% for obj in objval %}
+
+        <tr>
+             <td>{{ obj.b_id }}</td>
+            <td>{{ obj.date }}</td>
+            <td>{{ obj.time }}</td>
+            <td>{{ obj.complaint }}</td>
+
+                <td><a href="{% url 'breply' idd=obj.ca_id %}">Post reply</a></td>
+
+               </tr>
+         {% endfor %}
+    {% endif %}
+
+    </table>
+{% endblock %}

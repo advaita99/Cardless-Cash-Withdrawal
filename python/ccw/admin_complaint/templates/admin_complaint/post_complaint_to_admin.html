@@ -1,0 +1,21 @@
+{% extends 'temp/bank.html' %}
+{% block base %}
+<form method="POST">
+    {% csrf_token %}
+	<h1 align="center">post complaint to admin</h1>
+ <table align="center" >
+                <tr>
+                    <td >Complaint</td>
+                    <td>
+                        <textarea style="color: black" cols="25" rows="3" name="complaint" class="form-control" required=""></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                	<td align="center" height="50">
+                        <input style="color: black"type="submit" name="POST" value="POST" class="btn btn-primary">
+                    </td>
+                </tr>
+ </table>
+            </form>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'temp/admin.html' %}
+{% block base %}
+    <h1><center>manage bank</center></h1>
+    <table class="table table-bordered text-center">
+        <tr style="font-weight: bolder">
+
+                <td>Bank Name</td>
+                <td>Address</td>
+                <td>Registration number</td>
+                <td>IFSC code</td>
+
+                <td>Phone number</td>
+                <td>E-mail</td>
+            <td>status</td>
+        </tr>
+           {% if objval %}
+        {% for obj in objval  %}
+
+
+       
+<tr>
+    <td>{{ obj.bank_name }}</td>
+     <td>{{ obj.address }}</td>
+      <td>{{ obj.reg_no }}</td>
+       <td>{{ obj.ifsc_code }}</td>
+        <td>{{ obj.phone_number}}</td>
+         <td>{{ obj.email }}</td>
+    <td>{{ obj.status }}</td>
+
+  
+    <td><a href="{% url 'approve' idd=obj.b_id%}">APPROVE</a> </td>
+    <td><a href="{% url 'reject' idd=obj.b_id %}">REJECT</a> </td>
+
+</tr>
+        {% endfor %}
+    {% endif %}
+        
+    </table>
+{% endblock %}

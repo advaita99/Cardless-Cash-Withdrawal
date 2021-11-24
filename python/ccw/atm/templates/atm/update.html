@@ -1,0 +1,33 @@
+{% extends 'temp/bank.html' %}
+{% block base %}
+<form method="post">
+<font color="blue">
+    {% csrf_token %}
+    {% if objval %}
+	<h1 align="center">Update Register</h1>
+<table align="center">
+	<tr>
+		<td> b_id</td>
+		<td height="50"> <input style="color: black"type="text" Name="bi" class="form-control" required="" value="{{ objval.b_id }}"></td>
+	</tr>
+	<tr>
+		<td>location</td>
+		<td height="50"> <input style="color: black"type="text" Name="location" class="form-control" required="" value="{{ objval.location }}"></td>
+	</tr>
+	<tr>
+		<td> latitude</td>
+		<td height="50"> <input style="color: black"type="text" Name="latitude" class="form-control" required="" value="{{ objval.latitude }}"></td>
+	</tr>
+	<tr>
+		<td> longitude</td>
+		<td height="50"> <input style="color: black"type="text" Name="longitude" class="form-control" required="" value="{{ objval.longitude }}"></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td height="50"><input style="color: black"type="submit" name="submit" class="btn btn-primary"></td>
+	</tr>
+</table>
+{% endif %}
+</font>
+    </form>
+{% endblock %}
